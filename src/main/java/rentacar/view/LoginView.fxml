@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.231" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rentacar.view.LoginControler">
+   <children>
+     
+      <Label fx:id="loginStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="312.0" prefHeight="17.0" prefWidth="263.0" textAlignment="CENTER" />
+      <ImageView fx:id="carLoginImg" fitHeight="114.0" fitWidth="263.0" layoutX="69.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="textUsername" layoutX="69.0" layoutY="150.0" prefHeight="25.0" prefWidth="263.0" promptText="Потребителско име" />
+      <PasswordField fx:id="textPassword" layoutX="70.0" layoutY="199.0" onKeyPressed="#handleEnter" prefHeight="25.0" prefWidth="263.0" promptText="Парола" />
+       <Button alignment="CENTER" layoutX="70.0" layoutY="245.0" mnemonicParsing="false" onAction="#login" prefHeight="55.0" prefWidth="263.0" text="Вход" />
+      <Label fx:id="loginVerUser" layoutX="86.0" layoutY="175.0" prefHeight="17.0" prefWidth="245.0" textAlignment="CENTER" />
+      <Label fx:id="loginVerPass" layoutX="86.0" layoutY="224.0" prefHeight="17.0" prefWidth="201.0" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

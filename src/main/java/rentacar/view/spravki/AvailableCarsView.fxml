@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rentacar.view.spravki.AvailableCarsController">
+   <children>
+      <Label layoutX="244.0" layoutY="61.0" text="Справка по произволен период за налични автомобили" />
+      <TableView fx:id="carTableView" layoutX="53.0" layoutY="190.0" prefHeight="253.0" prefWidth="695.0">
+        <columns>
+          <TableColumn fx:id="regNumberCol" prefWidth="107.0" text="Рег. Номер" />
+          <TableColumn fx:id="carModelCol" prefWidth="112.0" text="Модел" />
+            <TableColumn fx:id="smoking" minWidth="0.0" prefWidth="88.0" text="Пушене" />
+            <TableColumn fx:id="carCategoryCol" minWidth="0.0" prefWidth="131.0" text="Категория" />
+            <TableColumn fx:id="carClassificatinCol" prefWidth="256.0" text="Клас" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="dateFrom" layoutX="221.0" layoutY="96.0" />
+      <DatePicker fx:id="dateTo" layoutX="425.0" layoutY="96.0" />
+      <Label layoutX="202.0" layoutY="100.0" text="От" />
+      <Label layoutX="406.0" layoutY="100.0" text="До" />
+      <Button layoutX="612.0" layoutY="96.0" mnemonicParsing="false" onAction="#availableCars" text="Справка" />
+      <Label fx:id="statusPeriod" alignment="CENTER" layoutX="256.0" layoutY="453.0" prefHeight="17.0" prefWidth="301.0" />
+   </children>
+</AnchorPane>

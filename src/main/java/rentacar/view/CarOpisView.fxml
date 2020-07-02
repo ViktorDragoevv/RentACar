@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rentacar.view.CarOpisController">
+   <children>
+      <GridPane layoutX="138.0" layoutY="54.0" prefHeight="37.0" prefWidth="536.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="144.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="337.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="58.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="17.0" prefWidth="163.0" text="Рег. номер на автомобил" />
+            <TextField fx:id="regNumber" prefHeight="25.0" prefWidth="333.0" GridPane.columnIndex="1" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#opisBtn" text="Търси" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <TableView fx:id="opisTV" layoutX="132.0" layoutY="104.0" prefHeight="369.0" prefWidth="536.0">
+        <columns>
+          <TableColumn fx:id="dateCol" prefWidth="93.0" text="Дата" />
+            <TableColumn fx:id="problemCol" prefWidth="306.0" text="Статус" />
+          <TableColumn fx:id="kmCol" minWidth="0.0" prefWidth="134.0" text="Километри" />
+        </columns>
+      </TableView>
+      <Label fx:id="statusLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="273.0" layoutY="85.0" prefHeight="17.0" prefWidth="254.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="apRent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rentacar.view.RentCarController">
+   <children>
+      <Label layoutX="321.0" layoutY="6.0" text="Наемане на автомобил" />
+      <GridPane layoutX="16.0" layoutY="36.0" prefHeight="449.0" prefWidth="762.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="145.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="608.0" minWidth="10.0" prefWidth="608.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="166.0" minHeight="10.0" prefHeight="166.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="190.0" minHeight="10.0" prefHeight="29.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="198.0" minHeight="10.0" prefHeight="198.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Клиент EГН:" />
+            <TextField fx:id="clientPIN" GridPane.columnIndex="1" />
+            <Label text="Критерии за автомобил:" GridPane.rowIndex="2" />
+            <TextField fx:id="carSpecs" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label GridPane.rowIndex="4" />
+            <Label text="Дата на връщане:" GridPane.rowIndex="4" />
+            <TableView fx:id="cartableView" onMouseClicked="#imageViewUpdate" prefHeight="164.0" prefWidth="422.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <columns>
+                <TableColumn fx:id="regNumberCol" prefWidth="87.0" resizable="false" text="Рег номер" />
+                <TableColumn fx:id="carModelCol" prefWidth="135.0" resizable="false" text="Модел" />
+                  <TableColumn fx:id="smoking" prefWidth="58.0" resizable="false" text="Пушене" />
+                  <TableColumn fx:id="carClassificatinCol" prefWidth="213.0" resizable="false" text="Клас" />
+                  <TableColumn fx:id="carCategoryCol" prefWidth="113.0" resizable="false" text="Категория" />
+              </columns>
+            </TableView>
+            <AnchorPane prefHeight="192.0" prefWidth="158.0" GridPane.rowIndex="3">
+               <children>
+                  <Label layoutY="6.0" text="Избор на автомобил:" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="clientTableView" onMouseClicked="#selectedClient" prefHeight="68.0" prefWidth="418.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="clientNames" prefWidth="140.0" text="Имена" />
+                <TableColumn fx:id="clientPin" prefWidth="85.0" text="ЕГН" />
+                  <TableColumn fx:id="clientDriveLic" minWidth="0.0" prefWidth="128.0" text="№ Ш.К" />
+                  <TableColumn fx:id="clientAddress" minWidth="0.0" prefWidth="188.0" text="Адрес" />
+                  <TableColumn fx:id="clientrating" prefWidth="66.0" text="Рейтинг" />
+              </columns>
+            </TableView>
+            <AnchorPane prefHeight="0.0" prefWidth="608.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Label fx:id="dateCheck" layoutX="186.0" layoutY="4.0" prefHeight="17.0" prefWidth="231.0" textFill="RED" wrapText="true" />
+                  <DatePicker fx:id="returnDate" layoutY="6.0" />
+                  <Button layoutX="543.0" layoutY="7.0" mnemonicParsing="false" onAction="#rentBtn" text="Наемане" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutY="6.0" text="Информация за клиент:" />
+                  <Label fx:id="clientCheck" contentDisplay="CENTER" layoutY="33.0" prefHeight="20.0" prefWidth="134.0" textFill="#ff0025" wrapText="true" />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <ImageView fx:id="carImg" fitHeight="121.0" fitWidth="158.0" layoutX="4.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="carCheck" layoutX="24.0" layoutY="292.0" prefHeight="27.0" prefWidth="118.0" textFill="#ff0025" wrapText="true" />
+      <Button fx:id="returnCarView" layoutX="639.0" layoutY="6.0" mnemonicParsing="false" onAction="#ChangeAPtoReturn" text="Връщане на автомобил" />
+   </children>
+</AnchorPane>
